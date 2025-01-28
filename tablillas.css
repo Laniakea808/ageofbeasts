@@ -1109,7 +1109,7 @@ grid-template-rows:2fr 1fr;
 grid-template-areas:
 'image data'
 'image extra';
-max-height:calc(30rem + 3px);
+max-height:calc(25rem + 3px);
 gap:1px;
 & [data-section="image"] {
 grid-area:image;
