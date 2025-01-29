@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Select all filter radio buttons and the character grid
-    const filters = document.querySelectorAll(".filters input");
-    const characterGrid = document.querySelector(".character-grid");
+    // Select all filter buttons
+    const filterButtons = document.querySelectorAll(".filters button");
     const characters = document.querySelectorAll(".character");
 
-    filters.forEach(filter => {
-        filter.addEventListener("change", function () {
-            // Get the selected filter's value (e.g., "all", "pnj", "dead", "available")
-            const selectedFilter = this.id.replace("filter-", ""); // Removes "filter-" prefix
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Get the filter type from the button's onclick attribute
+            const selectedFilter = this.getAttribute("onclick").replace("filterCharacters('", "").replace("')", "");
 
             characters.forEach(character => {
                 // Show all characters if "all" is selected
