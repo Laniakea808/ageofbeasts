@@ -1,14 +1,15 @@
-/* Fake CSS for Tumblr */
 document.addEventListener("DOMContentLoaded", function () {
-    // Select buttons and characters
+    // Seleccionamos los botones de filtro
     const buttons = {
         all: document.getElementById("filter-all"),
         pnj: document.getElementById("filter-pnj"),
         dead: document.getElementById("filter-dead"),
         play: document.getElementById("filter-play"),
     };
+    // Seleccionamos los personajes
     const characters = document.querySelectorAll(".character");
-    
+
+    // Función para filtrar personajes
     function filterCharacters(filter) {
         characters.forEach(character => {
             if (filter === "all" || character.dataset.status === filter) {
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
+
+    // Añadimos eventos de clic a los botones
     buttons.all.addEventListener("click", () => filterCharacters("all"));
     buttons.pnj.addEventListener("click", () => filterCharacters("pnj"));
     buttons.dead.addEventListener("click", () => filterCharacters("dead"));
