@@ -1,34 +1,39 @@
-/*
-    Falso archivo CSS que contiene JavaScript.
-    Esto se ejecutará solo si es interpretado como JavaScript.
-*/
-(() => {
-    document.addEventListener("DOMContentLoaded", function () {
-        // Seleccionamos los botones de filtro
-        const buttons = {
-            all: document.getElementById("filter-all"),
-            pnj: document.getElementById("filter-pnj"),
-            dead: document.getElementById("filter-dead"),
-            play: document.getElementById("filter-play"),
-        };
-        // Seleccionamos los personajes
-        const characters = document.querySelectorAll(".character");
+/* Falso archivo CSS que contiene JavaScript */
+body::before {
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    /* Inyección del script en el DOM */
+    animation: inject-script 0s 1;
+}
 
-        // Función para filtrar personajes
-        function filterCharacters(filter) {
-            characters.forEach(character => {
-                if (filter === "all" || character.dataset.status === filter) {
-                    character.style.display = "flex";
-                } else {
-                    character.style.display = "none";
-                }
-            });
-        }
-
-        // Añadimos eventos de clic a los botones
-        buttons.all.addEventListener("click", () => filterCharacters("all"));
-        buttons.pnj.addEventListener("click", () => filterCharacters("pnj"));
-        buttons.dead.addEventListener("click", () => filterCharacters("dead"));
-        buttons.play.addEventListener("click", () => filterCharacters("play"));
-    });
-})();
+@keyframes inject-script {
+    from {
+        /* El código JavaScript va aquí */
+        content: "(() => {"
+            "document.addEventListener('DOMContentLoaded', function () {"
+                "const buttons = {"
+                    "all: document.getElementById('filter-all'),"
+                    "pnj: document.getElementById('filter-pnj'),"
+                    "dead: document.getElementById('filter-dead'),"
+                    "play: document.getElementById('filter-play')"
+                "};"
+                "const characters = document.querySelectorAll('.character');"
+                "function filterCharacters(filter) {"
+                    "characters.forEach(character => {"
+                        "if (filter === 'all' || character.dataset.status === filter) {"
+                            "character.style.display = 'flex';"
+                        "} else {"
+                            "character.style.display = 'none';"
+                        "}"
+                    "});"
+                "}"
+                "buttons.all.addEventListener('click', () => filterCharacters('all'));"
+                "buttons.pnj.addEventListener('click', () => filterCharacters('pnj'));"
+                "buttons.dead.addEventListener('click', () => filterCharacters('dead'));"
+                "buttons.play.addEventListener('click', () => filterCharacters('play'));"
+            "});"
+        "})();";
+    }
+}
