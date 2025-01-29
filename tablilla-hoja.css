@@ -1,178 +1,124 @@
-br {
-display:none;
+/* Hoja de Personaje */
+.ncve[data-tablilla="hojapj"] {
+ margin: 1rem auto;
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-areas: 
+   "header"
+   "main"
+   "ability"
+   "spells"
+   "passive";
+ gap: 1rem;
+ width: 100%;
+ max-width: 800px;
+ padding: 1rem;
+ background: var(--tbckg0);
+ backdrop-filter: var(--ft-blur);
+ border-radius: 10px;
 }
 
-&, & *, & *::before, & *::after {
---group:var(--accent1);
---group-75:color-mix(in srgb, var(--accent1) 75%, transparent);
---group-50:color-mix(in srgb, var(--accent1) 50%, transparent);
---group-25:color-mix(in srgb, var(--accent1) 25%, transparent);
-}
-/* Contenedor principal */
-.character-sheet {
-    width: 60%;
-    margin: 20px auto;
-    background-color: #080808bf;
-    border: 1px solid #161616;
-    box-sizing: border-box;
+.ncve[data-tablilla="hojapj"] > h1 {
+ font: var(--fs-h1) var(--f-deco);
+ color: var(--group-25);
+ text-align: center;
+ margin: 0;
 }
 
-/* Header */
-.header {
-    background:var(--tbckg0);
-    backdrop-filter:var(--ft-blur);
-    padding:2rem;
+.ncve[data-tablilla="hojapj"] > h2 {
+ font: var(--fs-h3) var(--f-mono);
+ color: var(--text);
+ text-align: center;
+ margin-top: 0.5rem;
 }
 
-.header h1 {
-    font:var(--fs-h2) var(--f-deco);
-    -webkit-text-stroke:clamp(.25px, .1em, .5px) #5A3E8C;
-    line-height:1em;
-    color:var(--group-25);
-    text-align: center;
+.ncve[data-tablilla="hojapj"] [data-section="main"] {
+ grid-area: main;
+ background: var(--tbckg0);
+ padding: 1rem;
+ border-radius: 5px;
+ backdrop-filter: var(--ft-blur);
 }
 
-.header p {
-  font:700 var(--fs-deco) var(--f-mono);
-  text-transform:uppercase;
-  padding:0 2em;
-  color:var(--text2);
-    text-align: center;
+.ncve[data-tablilla="hojapj"] [data-section="main"] > b {
+ font: var(--fs-h4) var(--f-deco);
+ color: var(--group-25);
+ text-align: center;
 }
 
-/* Imagen y estadísticas */
-.image-and-stats {
-    display: flex;
-    align-items: flex-start;
-    gap: 0px;
-    margin-bottom: 0px;
+.ncve[data-tablilla="hojapj"] [data-section="ability"],
+.ncve[data-tablilla="hojapj"] [data-section="spells"],
+.ncve[data-tablilla="hojapj"] [data-section="passive"] {
+ background: var(--tbckg0);
+ padding: 1rem;
+ border-radius: 5px;
+ backdrop-filter: var(--ft-blur);
 }
 
-.image-box {
-    width: 30%;
-    height: 208px;
-    background-color: #353B45;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #161616;
-    color: white;
+.ncve[data-tablilla="hojapj"] [data-section="ability"] {
+ grid-area: ability;
 }
 
-.stats-info {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 100%;
+.ncve[data-tablilla="hojapj"] [data-section="spells"] {
+ grid-area: spells;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0px;
-    width: 100%;
+.ncve[data-tablilla="hojapj"] [data-section="passive"] {
+ grid-area: passive;
 }
 
-.stat {
-    text-align: center;
-    background-color: #353B45;
-    padding: 10px;
-    border: none;
-    border-right: 1px solid #161616;
-    border-bottom: 1px solid #161616;
-    color: white;
-    font-size: 14px;
+.ncve[data-tablilla="hojapj"] .skill-level {
+ display: flex;
+ gap: 0.5rem;
+ margin-top: 1rem;
 }
 
-.stat:nth-child(6n) {
-    border-right: none;
+.ncve[data-tablilla="hojapj"] .skill-level > span {
+ background: var(--tbckg0);
+ padding: 0.5rem;
+ border-radius: 5px;
+ backdrop-filter: var(--ft-blur);
+ text-align: center;
 }
 
-.stat-large {
-    grid-column: span 2;
-    border-right: 1px solid #161616;
-    border-top: 1px solid #161616;
+.ncve[data-tablilla="hojapj"] .spells-container,
+.ncve[data-tablilla="hojapj"] .passive-container {
+ display: flex;
+ gap: 1rem;
+ flex-direction: column;
 }
 
-.stat-large:nth-child(2n) {
-    border-right: none;
+.ncve[data-tablilla="hojapj"] .spell,
+.ncve[data-tablilla="hojapj"] .passive {
+ background: var(--tbckg0);
+ padding: 1rem;
+ border-radius: 5px;
+ backdrop-filter: var(--ft-blur);
 }
 
-/* Clase y habilidad */
-.class-skill {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 0px;
+.ncve[data-tablilla="hojapj"] .spell > b,
+.ncve[data-tablilla="hojapj"] .passive > b {
+ font: var(--fs-tiny) var(--f-deco);
+ color: var(--group);
+ text-transform: uppercase;
+ margin-bottom: 0.5rem;
 }
 
-.class-box, .skill-box {
-    flex: 1;
-    text-align: center;
-    background-color: #353B45;
-    padding: 10px;
-    border: 2px solid #C4A7E7;
-    color: white;
-    font-size: 14px;
+.ncve[data-tablilla="hojapj"] .spell .level,
+.ncve[data-tablilla="hojapj"] .passive .level {
+ display: flex;
+ gap: 0.5rem;
 }
 
-/* Secciones */
-.section {
-    margin-bottom: 0px;
+.ncve[data-tablilla="hojapj"] .level span {
+ background: var(--tbckg0);
+ padding: 0.5rem;
+ border-radius: 5px;
+ backdrop-filter: var(--ft-blur);
+ text-align: center;
 }
 
-.description {
-    background-color: #353B45;
-    padding: 15px;
-    border-bottom: 1px solid #161616;
-    text-align: justify;
-    height: 6rem;
-    overflow: auto;
-}
-
-.tabs {
-    display: flex;
-    justify-content: space-between;
-}
-
-.tab {
-    flex: 1;
-    text-align: center;
-    background-color: #353B45;
-    padding: 10px;
-    border-bottom: 1px solid #161616;
-    border-right: 1px solid #161616;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.tab:hover {
-    background-color: #C4A7E7;
-    color: #353B45;
-}
-
-.tab:nth-child(3n) {
-    border-right: none;
-}
-
-.hechizos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0px;
-    width: 100%;
-}
-
-.hechizo-large{
-  grid-column: span 4;
-}
-
-.hechizo:nth-child(1n) {
-    border-right: 1px solid #161616;
-}
-
-.hechizo:nth-child(2n) {
-    border-right: none;
-}
-
-.hechizo:nth-child(3n) {
-    border-right: none;
+/* Estilo para ocultar el perfil */
+.post:has(.ncve[data-tablilla="hojapj"]) .postprofile {
+ display: none;
 }
