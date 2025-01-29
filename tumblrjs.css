@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         play: document.getElementById("filter-play"),
     };
     const characters = document.querySelectorAll(".character");
-
-    // Helper function to filter characters
+    
     function filterCharacters(filter) {
         characters.forEach(character => {
             if (filter === "all" || character.dataset.status === filter) {
@@ -19,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    // Add event listeners to buttons
+    
     buttons.all.addEventListener("click", () => filterCharacters("all"));
     buttons.pnj.addEventListener("click", () => filterCharacters("pnj"));
     buttons.dead.addEventListener("click", () => filterCharacters("dead"));
