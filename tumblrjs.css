@@ -1,26 +1,28 @@
 /* Fake CSS for Tumblr */
 document.addEventListener("DOMContentLoaded", function () {
-    // Select all filter buttons
-    const filterButtons = document.querySelectorAll(".filters button");
+    // Select buttons and characters
+    const buttons = {
+        all: document.getElementById("filter-all"),
+        pnj: document.getElementById("filter-pnj"),
+        dead: document.getElementById("filter-dead"),
+        play: document.getElementById("filter-play"),
+    };
     const characters = document.querySelectorAll(".character");
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            // Get the filter type from the button's onclick attribute
-            const selectedFilter = this.getAttribute("onclick").replace("filterCharacters('", "").replace("')", "");
-
-            characters.forEach(character => {
-                // Show all characters if "all" is selected
-                if (selectedFilter === "all") {
-                    character.style.display = "flex";
-                } else if (character.dataset.status === selectedFilter) {
-                    // Show characters matching the selected filter
-                    character.style.display = "flex";
-                } else {
-                    // Hide characters not matching the selected filter
-                    character.style.display = "none";
-                }
-            });
+    // Helper function to filter characters
+    function filterCharacters(filter) {
+        characters.forEach(character => {
+            if (filter === "all" || character.dataset.status === filter) {
+                character.style.display = "flex";
+            } else {
+                character.style.display = "none";
+            }
         });
-    });
+    }
+
+    // Add event listeners to buttons
+    buttons.all.addEventListener("click", () => filterCharacters("all"));
+    buttons.pnj.addEventListener("click", () => filterCharacters("pnj"));
+    buttons.dead.addEventListener("click", () => filterCharacters("dead"));
+    buttons.play.addEventListener("click", () => filterCharacters("play"));
 });
