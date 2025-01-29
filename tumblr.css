@@ -35,8 +35,20 @@ body {
             border-radius: 5px;
         }
 
-        .filters button:hover {
+        .filters .btn-all {
             background-color: #45475a;
+        }
+
+        .filters .btn-pnj {
+            background: linear-gradient(45deg, #8b0000, #4b0000);
+        }
+
+        .filters .btn-dead {
+            background: linear-gradient(45deg, #555555, #2b2b2b);
+        }
+
+        .filters .btn-play {
+            background: linear-gradient(45deg, #5a189a, #3c1361);
         }
 
         .character-grid {
