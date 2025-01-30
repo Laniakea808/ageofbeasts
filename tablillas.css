@@ -1265,6 +1265,7 @@ text-align-last:center;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
+  margin:1rem auto;
 }
 
 .ncve[data-tablilla="hojapj"] br {
