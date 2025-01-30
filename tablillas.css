@@ -1269,7 +1269,12 @@ text-align-last:center;
 }
 
 .ncve[data-tablilla="hojapj"] br {
-  display: none;
+  display: none !important;
+}
+
+.ncve[data-tablilla="hojapj"] p {
+  margin: 0;
+  padding: 0;
 }
 
 /* HEADER - Nombre y Clase */
