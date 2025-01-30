@@ -1258,3 +1258,55 @@ text-align-last:center;
 .post:has(.ncve[data-tablilla="ficha"]) .postprofile {
   display: none;
 }
+
+/*HOJA DE PERSONAJE*/
+   .ncve[data-tablilla="hoja-personaje"] {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100%;
+   }
+   
+   [data-section="header"] {
+       text-align: center;
+       width: 100%;
+   }
+   
+   [data-section="image"] {
+       width: 100%;
+       text-align: center;
+   }
+   
+   [data-section="image"] img {
+       max-width: 100%;
+       height: auto;
+       display: block;
+   }
+   
+   [data-section="data"] {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 10px;
+       width: 100%;
+       text-align: right;
+   }
+   
+   .habilidades-grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 20px;
+       width: 100%;
+   }
+   
+   .flex {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+       width: 100%;
+   }
+   
+   .hechizo, .pasiva {
+       width: 100%;
+       padding: 10px;
+       box-sizing: border-box;
+   }
