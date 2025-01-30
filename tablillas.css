@@ -1413,7 +1413,7 @@ text-align-last:center;
 }
 
 .ncve[data-tablilla="hojapj"] [data-item] b {
-  font: 700 var(--fs-small) var(--f-mono2);
+  font: 700 var(--fs-deco) var(--f-mono);
   text-transform: uppercase;
   color: var(--group);
 }
