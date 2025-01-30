@@ -1293,16 +1293,26 @@ text-align-last:center;
     text-transform: uppercase;
 }
 
+/* Sección principal */
+.ncve[data-tablilla="hoja-personaje"] [data-section="main"] {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+        'image data'
+        'image extra';
+    max-height: calc(27rem + 3px);
+    gap: 1px;
+}
+
 /* Imagen del personaje */
 .ncve[data-tablilla="hoja-personaje"] [data-section="image"] {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+    grid-area: image;
+    border: 1rem solid var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1rem solid var(--tbckg0);
-    backdrop-filter: var(--ft-blur);
 }
 
 .ncve[data-tablilla="hoja-personaje"] [data-section="image"] img {
@@ -1318,6 +1328,9 @@ text-align-last:center;
     display: grid;
     gap: 1px;
     text-align: center;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="data"]:first-of-type {
     grid-template-columns: repeat(2, 1fr);
 }
 
