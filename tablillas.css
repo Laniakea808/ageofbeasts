@@ -1258,3 +1258,77 @@ text-align-last:center;
 .post:has(.ncve[data-tablilla="ficha"]) .postprofile {
   display: none;
 }
+
+/* CSS para la Hoja de Personaje */
+.ncve[data-tablilla="hoja-personaje"] {
+    width: clamp(300px, 75%, 50rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="header"] {
+    background: var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    padding: 2rem;
+    text-align: center;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="header"] b {
+    font: var(--fs-h2) var(--f-deco);
+    color: var(--group-25);
+    -webkit-text-stroke: clamp(.25px, .1em, .5px) var(--group);
+    text-transform: uppercase;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="header"] i {
+    font: 700 var(--fs-deco) var(--f-mono);
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="image"] {
+    border: 1rem solid var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="data"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="data"] span {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1rem;
+    background: var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    font: 700 var(--fs-deco) var(--f-mono);
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="caja"] {
+    background: var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    padding: 1rem;
+    margin-top: 1px;
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="caja"] h {
+    font: 700 var(--fs-small) var(--f-mono2);
+    text-transform: uppercase;
+    color: var(--group);
+}
+
+.ncve[data-tablilla="hoja-personaje"] [data-section="text"] {
+    font-size: var(--fs-smaller);
+    line-height: 1.35em;
+    padding: 1rem;
+    border: 2rem solid transparent;
+    border-right-width: 1rem;
+    max-height: 15rem;
+    overflow: auto;
+}
