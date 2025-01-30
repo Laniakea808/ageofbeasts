@@ -1267,6 +1267,10 @@ text-align-last:center;
   gap: 1px;
 }
 
+.ncve[data-tablilla="hojapj"] br {
+  display: none;
+}
+
 /* HEADER - Nombre y Clase */
 .ncve[data-tablilla="hojapj"] [data-section="header"] {
   padding: 2rem;
