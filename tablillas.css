@@ -1435,7 +1435,7 @@ text-align-last:center;
 
 /*TABLILLA DE COMBATE*/
 /* CONTENEDOR GENERAL */
-.ncve.combate {
+.ncve[data-tablilla="combate"] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -1444,7 +1444,7 @@ text-align-last:center;
 }
 
 /* TABLILLAS INDIVIDUALES */
-.combat-box {
+.ncve[data-tablilla="combate"] [data-section="combat-box"] {
     background: var(--tbckg0);
     backdrop-filter: var(--ft-blur);
     padding: 1rem;
@@ -1453,90 +1453,137 @@ text-align-last:center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 2px solid var(--text2); /* Color genérico por defecto */
 }
 
-/* COLORES DIFERENCIADOS */
-.combat-box[data-side="player"] {
-    border: 2px solid var(--group);
+/* DIFERENCIACIÓN DE COLORES */
+.ncve[data-tablilla="combate"] [data-section="combat-box"][data-side="player"] {
+    border-color: var(--group);
 }
 
-.combat-box[data-side="enemy"] {
-    border: 2px solid var(--staff);
+.ncve[data-tablilla="combate"] [data-section="combat-box"][data-side="enemy"] {
+    border-color: var(--staff);
 }
 
-/* HEADER */
-.combat-box .header {
-    font-size: 1.2em;
+/* HEADER - NOMBRE DEL PERSONAJE */
+.ncve[data-tablilla="combate"] [data-section="header"] {
+    font-size: var(--fs-small);
     font-weight: bold;
     text-transform: uppercase;
     color: var(--group);
     margin-bottom: 0.5rem;
 }
 
-.combat-box[data-side="enemy"] .header {
+.ncve[data-tablilla="combate"] [data-section="combat-box"][data-side="enemy"] [data-section="header"] {
     color: var(--staff);
 }
 
-/* IMAGEN */
-.combat-box .image img {
+/* IMAGEN DEL PERSONAJE */
+.ncve[data-tablilla="combate"] [data-section="image"] {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: clamp(150px, 12rem, 250px);
+    border: 1rem solid var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* STATS */
-.combat-box .stats {
+.ncve[data-tablilla="combate"] [data-section="image"] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* BARRA DE PV Y PM */
+.ncve[data-tablilla="combate"] [data-section="bars"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.ncve[data-tablilla="combate"] [data-section="bar"] {
+    height: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ncve[data-tablilla="combate"] [data-section="bar"] [data-type="hp"] {
+    background: var(--health-color);
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.ncve[data-tablilla="combate"] [data-section="bar"] [data-type="mp"] {
+    background: var(--mana-color);
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* ESTADÍSTICAS */
+.ncve[data-tablilla="combate"] [data-section="stats"] {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     margin-top: 0.5rem;
 }
 
-.combat-box .stats .stat {
+.ncve[data-tablilla="combate"] [data-item="stat"] {
     background: rgba(255, 255, 255, 0.1);
     padding: 0.5rem;
     border-radius: 5px;
-    font-size: 0.9em;
+    font-size: var(--fs-smaller);
+    text-align: center;
 }
 
-/* LISTAS (HABILIDADES Y HECHIZOS) */
-.combat-box .habilidades,
-.combat-box .hechizos,
-.combat-box .historial {
+/* HABILIDADES Y HECHIZOS */
+.ncve[data-tablilla="combate"] [data-section="habilidades"],
+.ncve[data-tablilla="combate"] [data-section="hechizos"] {
     margin-top: 1rem;
     text-align: left;
 }
 
-.combat-box .habilidades b,
-.combat-box .hechizos b,
-.combat-box .historial b {
+.ncve[data-tablilla="combate"] [data-section="habilidades"] b,
+.ncve[data-tablilla="combate"] [data-section="hechizos"] b {
     display: block;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: var(--fs-small);
     margin-bottom: 0.3rem;
 }
 
-.combat-box ul {
+.ncve[data-tablilla="combate"] ul {
     list-style: none;
     padding: 0;
 }
 
-.combat-box ul li {
-    font-size: 0.9em;
+.ncve[data-tablilla="combate"] ul li {
+    font-size: var(--fs-smaller);
     padding: 0.3rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.combat-box ul li span {
-    font-size: 0.8em;
+.ncve[data-tablilla="combate"] ul li span {
+    font-size: var(--fs-tiny);
     color: rgba(255, 255, 255, 0.6);
 }
 
 /* HISTORIAL DE COMBATE */
-.combat-box .historial p {
-    font-size: 0.9em;
+.ncve[data-tablilla="combate"] [data-section="historial"] {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.ncve[data-tablilla="combate"] [data-section="historial"] p {
+    font-size: var(--fs-smaller);
     background: rgba(255, 255, 255, 0.1);
     padding: 0.5rem;
     border-radius: 5px;
-}  
+}
