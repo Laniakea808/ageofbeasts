@@ -1434,6 +1434,9 @@ text-align-last:center;
 }
 
 /*TABLILLA DE COMBATE*/
+  .ncve[data-tablilla="combate"], .ncve[data-tablilla="combate"] * {
+    all: unset !important;
+}
 /* CONTENEDOR GENERAL */
 .ncve[data-tablilla="combate"] {
     display: grid !important;
