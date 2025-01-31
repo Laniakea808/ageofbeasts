@@ -1434,17 +1434,18 @@ text-align-last:center;
 }
 
 /*TABLILLA DE COMBATE*/
-  .ncve[data-tablilla="combate"], .ncve[data-tablilla="combate"] * {
-    all: unset !important;
-}
-/* CONTENEDOR GENERAL */
+/* CONTENEDOR GENERAL 
 .ncve[data-tablilla="combate"] {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 1rem !important;
     width: clamp(600px, 90%, 1000px) !important;
     margin: auto !important;
-    background: red !important; /* Prueba visual para ver si aplica */
+} */
+  #combate, .ncve[data-tablilla="combate"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
 }
 
 /* TABLILLAS INDIVIDUALES */
