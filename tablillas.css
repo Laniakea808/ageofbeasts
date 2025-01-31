@@ -1383,13 +1383,17 @@ text-align-last:center;
   grid-row: auto;
 }
 
-.ncve[data-tablilla="hojapj"] [data-section="habilidad"] b {
-  font: 700 var(--fs-deco) var(--f-mono);
+.ncve[data-tablilla="hojapj"] [data-section="habilidad"] > b,
+.ncve[data-tablilla="hojapj"] [data-item] > b {
+  font: 700 1.2em var(--f-mono);
   text-transform: uppercase;
   color: var(--group);
+  display: block;
+  margin-bottom: 0.5em;
 }
 
-.ncve[data-tablilla="hojapj"] [data-section="habilidad"] p {
+.ncve[data-tablilla="hojapj"] [data-section="habilidad"] p,
+.ncve[data-tablilla="hojapj"] [data-item] p {
   font-size: var(--fs-smaller);
   line-height: 1.3em;
 }
@@ -1412,19 +1416,13 @@ text-align-last:center;
   text-align: center;
 }
 
-.ncve[data-tablilla="hojapj"] [data-item] b {
-  font: 700 var(--fs-deco) var(--f-mono);
-  text-transform: uppercase;
-  color: var(--group);
-  display: block;
-  margin-bottom: 0.3em;
-}
-
-.ncve[data-tablilla="hojapj"] [data-item] p {
-  font-size: var(--fs-smaller);
-  line-height: 1.3em;
-  display: block; /* Asegura que <p> comience en una nueva línea */
-  margin-top: 0;
+.ncve[data-tablilla="hojapj"] [data-section="habilidad"] p b,
+.ncve[data-tablilla="hojapj"] [data-item] p b {
+  display: block; /* Fuerza cada "Nivel X" a su propia línea */
+  font-weight: bold; /* Negrita normal */
+  font-size: inherit; /* Mantiene el tamaño normal */
+  color: var(--group); /* Usa el mismo color que el texto */
+  margin-top: 0.3em;
 }
 
 /* OCULTAR PERFIL EN POST */
