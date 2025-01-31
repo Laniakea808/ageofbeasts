@@ -1436,11 +1436,12 @@ text-align-last:center;
 /*TABLILLA DE COMBATE*/
 /* CONTENEDOR GENERAL */
 .ncve[data-tablilla="combate"] {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    width: clamp(600px, 90%, 1000px);
-    margin: auto;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    width: clamp(600px, 90%, 1000px) !important;
+    margin: auto !important;
+    background: red !important; /* Prueba visual para ver si aplica */
 }
 
 /* TABLILLAS INDIVIDUALES */
