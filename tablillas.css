@@ -1385,7 +1385,7 @@ text-align-last:center;
 
 .ncve[data-tablilla="hojapj"] [data-section="habilidad"] > b,
 .ncve[data-tablilla="hojapj"] [data-item] > b {
-  font: 700 1.2em var(--f-mono);
+  font: 700 1em var(--f-mono);
   text-transform: uppercase;
   color: var(--group);
   display: block;
@@ -1418,11 +1418,11 @@ text-align-last:center;
 
 .ncve[data-tablilla="hojapj"] [data-section="habilidad"] p b,
 .ncve[data-tablilla="hojapj"] [data-item] p b {
-  display: block; /* Fuerza cada "Nivel X" a su propia línea */
-  font-weight: bold; /* Negrita normal */
-  font-size: inherit; /* Mantiene el tamaño normal */
-  color: var(--group); /* Usa el mismo color que el texto */
-  margin-top: 0.3em;
+  display: inline; /* Hace que <b> no rompa la línea */
+  font-weight: bold; /* Mantiene negrita */
+  font-size: inherit; /* Tamaño normal */
+  color: var(--group); /* Mantiene el color del texto */
+  margin-right: 0.3em; /* Espacio entre "Nivel X:" y la descripción */
 }
 
 /* OCULTAR PERFIL EN POST */
