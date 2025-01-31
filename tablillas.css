@@ -1418,11 +1418,14 @@ text-align-last:center;
 
 .ncve[data-tablilla="hojapj"] [data-section="habilidad"] p b,
 .ncve[data-tablilla="hojapj"] [data-item] p b {
-  display: inline; /* Hace que <b> no rompa la línea */
+  .ncve[data-tablilla="hojapj"] [data-section="habilidad"] p b,
+.ncve[data-tablilla="hojapj"] [data-item] p b {
+  display: inline-block !important; /* Evita que <b> salte de línea */
   font-weight: bold; /* Mantiene negrita */
   font-size: inherit; /* Tamaño normal */
   color: var(--group); /* Mantiene el color del texto */
-  margin-right: 0.3em; /* Espacio entre "Nivel X:" y la descripción */
+  margin-right: 0.4em; /* Espacio entre "Nivel X:" y la descripción */
+  white-space: nowrap; /* Evita que "Nivel X:" se parta en otra línea */
 }
 
 /* OCULTAR PERFIL EN POST */
