@@ -1432,3 +1432,111 @@ text-align-last:center;
 .post:has(.ncve[data-tablilla="hojapj"]) .postprofile {
   display: none;
 }
+
+/*TABLILLA DE COMBATE*/
+/* CONTENEDOR GENERAL */
+.ncve.combate {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: clamp(600px, 90%, 1000px);
+    margin: auto;
+}
+
+/* TABLILLAS INDIVIDUALES */
+.combat-box {
+    background: var(--tbckg0);
+    backdrop-filter: var(--ft-blur);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* COLORES DIFERENCIADOS */
+.combat-box[data-side="player"] {
+    border: 2px solid var(--group);
+}
+
+.combat-box[data-side="enemy"] {
+    border: 2px solid var(--staff);
+}
+
+/* HEADER */
+.combat-box .header {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--group);
+    margin-bottom: 0.5rem;
+}
+
+.combat-box[data-side="enemy"] .header {
+    color: var(--staff);
+}
+
+/* IMAGEN */
+.combat-box .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* STATS */
+.combat-box .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.combat-box .stats .stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* LISTAS (HABILIDADES Y HECHIZOS) */
+.combat-box .habilidades,
+.combat-box .hechizos,
+.combat-box .historial {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.combat-box .habilidades b,
+.combat-box .hechizos b,
+.combat-box .historial b {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 0.3rem;
+}
+
+.combat-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.combat-box ul li {
+    font-size: 0.9em;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.combat-box ul li span {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* HISTORIAL DE COMBATE */
+.combat-box .historial p {
+    font-size: 0.9em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 5px;
+}  
