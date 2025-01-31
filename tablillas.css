@@ -1416,11 +1416,15 @@ text-align-last:center;
   font: 700 var(--fs-deco) var(--f-mono);
   text-transform: uppercase;
   color: var(--group);
+  display: block;
+  margin-bottom: 0.3em;
 }
 
 .ncve[data-tablilla="hojapj"] [data-item] p {
   font-size: var(--fs-smaller);
   line-height: 1.3em;
+  display: block; /* Asegura que <p> comience en una nueva línea */
+  margin-top: 0;
 }
 
 /* OCULTAR PERFIL EN POST */
