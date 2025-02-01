@@ -873,6 +873,7 @@ overflow:auto;
 flex-grow:1;
 color:var(--text2);
 min-height: 5rem;
+height: 5rem;
 & i {
 color:var(--text);
 }
