@@ -872,6 +872,7 @@ line-height:1.35em;
 overflow:auto;
 flex-grow:1;
 color:var(--text2);
+min-height: 5rem;
 & i {
 color:var(--text);
 }
