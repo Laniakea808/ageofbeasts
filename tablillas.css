@@ -1377,7 +1377,7 @@ text-align-last:center;
   background: var(--tbckg0);
   backdrop-filter: var(--ft-blur);
   padding: 1.5rem;
-  text-align: center;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   justify-content: center;
