@@ -1415,7 +1415,7 @@ text-align-last:center;
   background: var(--tbckg0);
   backdrop-filter: var(--ft-blur);
   padding: 1rem;
-  text-align: center;
+  text-align: justify;
 }
 
 .ncve[data-tablilla="hojapj"] [data-section="habilidad"] p b,
