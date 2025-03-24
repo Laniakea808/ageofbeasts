@@ -17,7 +17,7 @@
   line-height: 140%;
 }
 
-.tkhpost1 b strong {
+.tkhpost1 b, strong {
   color: var(--groups);
 }
 
