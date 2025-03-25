@@ -17,7 +17,7 @@
   line-height: 140%;
 }
 
-.tkhpost1 b, .tkhpost1 strong {
+.tkhpost1 b, div.tkhpost1 strong {
   color: var(--groups) !important;
 }
 
