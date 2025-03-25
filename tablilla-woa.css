@@ -18,7 +18,7 @@
 }
 
 .tkhpost1 b, .tkhpost1 strong {
-  color: var(--groups);
+  color: var(--groups) !important;
 }
 
 .tkhpost1 i {
